@@ -34,11 +34,17 @@ public class Kauppa implements KauppaI {
     @Override
     public void lisaaKoriin(int id) {
         if (varasto.saldo(id)>0) {
+            if (varasto.saldo(id)>0) {
+                if (varasto.saldo(id)>0) {
+            
             Tuote t = varasto.haeTuote(id);             
             ostoskori.lisaa(t);
             varasto.otaVarastosta(t);
+            }
+            }
         }
-    }
+        }
+    
 
     @Override
     public boolean tilimaksu(String nimi, String tiliNumero) {

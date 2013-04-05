@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.6">
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Ostoskori.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Viitegeneraattori.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Pankki.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Tuote.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Kirjanpito.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/KauppaI.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Kauppa.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Varasto.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/KirjanpitoI.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/Main.java">
+<error line="13" column="5" severity="error" message="Metodin pituus on 19 riviÃ¤ (suurin sallittu on 10)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Ostoskori.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Viitegeneraattori.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Pankki.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Tuote.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Kirjanpito.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/KauppaI.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Kauppa.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Varasto.java">
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/KirjanpitoI.java">
+<error line="1" severity="error" message="Found duplicate of 6 lines in /cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/KauppaI.java, starting from line 1" source="com.puppycrawl.tools.checkstyle.checks.duplicates.StrictDuplicateCodeCheck"/>
+<error line="8" severity="error" message="Found duplicate of 5 lines in /cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/KauppaI.java, starting from line 6" source="com.puppycrawl.tools.checkstyle.checks.duplicates.StrictDuplicateCodeCheck"/>
+</file>
+<file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/Main.java">
+</file>
+</checkstyle>

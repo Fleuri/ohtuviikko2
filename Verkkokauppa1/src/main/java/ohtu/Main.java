@@ -1,5 +1,6 @@
 package ohtu;
 
+import java.util.Scanner;
 import ohtu.verkkokauppa.Kauppa;
 import ohtu.verkkokauppa.Kirjanpito;
 import ohtu.verkkokauppa.Pankki;
@@ -23,24 +24,22 @@ public class Main {
 
 
         // kauppa hoitaa yhden asiakkaan kerrallaan seuraavaan tapaan:
+        Scanner scn = new Scanner(System.in); 
         kauppa.aloitaAsiointi();
-        kauppa.lisaaKoriin(1);
-        kauppa.lisaaKoriin(3);
-        kauppa.lisaaKoriin(3);
-        kauppa.poistaKorista(1);
-        kauppa.tilimaksu("Pekka Mikkola", "1234-12345");
-
-        // seuraava asiakas
-        kauppa.aloitaAsiointi();
-        for (int i = 0; i < 24; i++) {
-            kauppa.lisaaKoriin(5);
-        }
-
-        kauppa.tilimaksu("Arto Vihavainen", "3425-1652");
-
-        // kirjanpito
-        for (String tapahtuma : kirjanpito.getTapahtumat()) {
-            System.out.println(tapahtuma);
+        while (true) {
+            System.out.println("Anna komento");
+            int komento = scn.nextInt();
+            if (komento == 0) {
+                System.exit(0);
+            } else if (komento == 1) {
+                System.out.println("Anna Id");
+                kauppa.lisaaKoriin(scn.nextInt());
+            } else if (komento == 2) {
+                System.out.println("Anna Id");
+                kauppa.poistaKorista(scn.nextInt());
+            } else if (komento == 3) {
+                kirjanpito.getTapahtumat();
+            }
         }
     }
 }
