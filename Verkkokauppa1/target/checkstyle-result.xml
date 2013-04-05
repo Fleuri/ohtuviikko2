@@ -13,13 +13,18 @@
 <file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/KauppaI.java">
 </file>
 <file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Kauppa.java">
+<error line="34" column="5" severity="error" message="Cyclomatic Complexity is 4 (max allowed is 3)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+<error line="34" column="5" severity="error" message="Metodin pituus on 11 riviÃ¤ (suurin sallittu on 10)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+<error line="38" column="17" severity="error" message="SisÃ¤kkÃ¤isten try -lausekkeiden syvyys on 2 (suurin sallittu on 1)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
 </file>
 <file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Varasto.java">
 </file>
 <file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/KirjanpitoI.java">
 </file>
 <file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/Main.java">
-<error line="13" column="5" severity="error" message="Metodin pituus on 19 riviÃ¤ (suurin sallittu on 10)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+<error line="14" column="5" severity="error" message="Cyclomatic Complexity is 8 (max allowed is 3)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+<error line="14" column="5" severity="error" message="Metodin pituus on 27 riviÃ¤ (suurin sallittu on 10)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+<error line="44" column="17" severity="error" message="Nested for depth is 1 (max allowed is 0)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedForDepthCheck"/>
 </file>
 <file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Ostoskori.java">
 </file>
@@ -42,5 +47,8 @@
 <error line="8" severity="error" message="Found duplicate of 5 lines in /cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/KauppaI.java, starting from line 6" source="com.puppycrawl.tools.checkstyle.checks.duplicates.StrictDuplicateCodeCheck"/>
 </file>
 <file name="/cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/Main.java">
+<error line="46" severity="error" message="Found duplicate of 4 lines in /cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/Main.java, starting from line 47" source="com.puppycrawl.tools.checkstyle.checks.duplicates.StrictDuplicateCodeCheck"/>
+<error line="46" severity="error" message="Found duplicate of 4 lines in /cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Kauppa.java, starting from line 43" source="com.puppycrawl.tools.checkstyle.checks.duplicates.StrictDuplicateCodeCheck"/>
+<error line="47" severity="error" message="Found duplicate of 4 lines in /cs/fs/home/laursuom/NetBeansProjects/ohtuviikko2/Verkkokauppa1/src/main/java/ohtu/verkkokauppa/Kauppa.java, starting from line 43" source="com.puppycrawl.tools.checkstyle.checks.duplicates.StrictDuplicateCodeCheck"/>
 </file>
 </checkstyle>
