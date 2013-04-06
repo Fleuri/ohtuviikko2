@@ -39,8 +39,54 @@ public class AuthenticationService {
     }
 
     private boolean invalid(String username, String password) {
-        // validity check of username and password
-
-        return false;
+        String letters = "abcdefghijklmnopqrstuvwxyz";
+        String digits = "0123456789";
+        if (username.length() < 3) {
+            return true;
+        } else {
+            for (int i = 0; i < username.length(); i++) {
+                char c = username.charAt(i);
+                for (int j = 0; j < letters.length(); j++) {
+                    if (letters.charAt(j) == c) {
+                        break;
+                    } else if (j == letters.length() - 1) {
+                        return true;
+                    }
+                }
+            }
+                if (password.length() < 8) {
+                    return true;
+                } else {
+                    boolean letterfound = false;
+                    boolean digitfound = false;
+                    for (int k = 0; k < password.length(); k++) {
+                        char c2 = password.charAt(k);
+                        for (int j = 0; j < letters.length(); j++) {
+                            if (letters.charAt(j) == c2) {
+                                letterfound = true;
+                                break;
+                            }
+                        }
+                        if (letterfound) {
+                            break;
+                        }
+                    }
+                    for (int k = 0; k < password.length(); k++) {
+                        char c2 = password.charAt(k);
+                        for (int j = 0; j < digits.length(); j++) {
+                            if (digits.charAt(j) == c2) {
+                                digitfound = true;
+                                break;
+                            }
+                        }
+                        if (digitfound) {
+                            break;
+                        }
+                    }
+                    if (letterfound && digitfound) {return false;} 
+                    else {return true;}
+                }
+            }
+        }
     }
-}
+
