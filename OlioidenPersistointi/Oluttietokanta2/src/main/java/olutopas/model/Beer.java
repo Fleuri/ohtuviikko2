@@ -17,6 +17,9 @@ public class Beer {
     
     @Id
     private Integer id;
+    
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Rating> ratings;
 
     @ManyToOne
     Brewery brewery;
@@ -90,6 +93,10 @@ public class Beer {
 
     public void removePub(Pub pub) {
         pubs.remove(pub);
+    }
+
+    public List<Rating> getRatings() {
+        throw new UnsupportedOperationException("Not yet implemented");
     }
     
 }

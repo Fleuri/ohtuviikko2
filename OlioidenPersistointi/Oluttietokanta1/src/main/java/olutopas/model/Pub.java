@@ -16,6 +16,31 @@ import javax.persistence.OneToMany;
  * @author laursuom
  */
 public class Pub {
+    
+     @Id
+    private Integer id;
+    
+    private String name;
+    
+    @ManyToMany
+    private List<Beer> beers;
+
+    @Override
+    public String toString() {
+        return "Pub{" + "id=" + id + ", name=" + name + ", beers=" + beers + '}';
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBeers(List<Beer> beers) {
+        this.beers = beers;
+    }
 
     public Integer getId() {
         return id;
@@ -32,11 +57,5 @@ public class Pub {
     public Pub() {
     }
     
-    @Id
-    private Integer id;
-    
-    private String name;
-    
-    @ManyToMany
-    private List<Beer> beers;
+   
 }
