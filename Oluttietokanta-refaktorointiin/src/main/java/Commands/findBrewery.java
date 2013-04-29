@@ -4,6 +4,8 @@
  */
 package Commands;
 
+import Tietokantaoperaatiot.DBHandler;
+import Tietokantaoperaatiot.DBHandler2;
 import com.avaje.ebean.EbeanServer;
 import olutopas.model.Beer;
 import olutopas.model.Brewery;
@@ -15,7 +17,7 @@ import olutopas.model.User;
  */
 public class findBrewery extends Command {
 
-    public findBrewery(EbeanServer server, User user) {
+    public findBrewery(DBHandler server, User user) {
         super(server, user);
     }
     
@@ -23,7 +25,7 @@ public class findBrewery extends Command {
     public void run() {
        System.out.print("brewery to find: ");
         String n = scanner.nextLine();
-        Brewery foundBrewery = server.find(Brewery.class).where().like("name", n).findUnique();
+        Brewery foundBrewery = server.findBrewery(n);
 
         if (foundBrewery == null) {
             System.out.println(n + " not found");

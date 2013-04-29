@@ -4,6 +4,7 @@
  */
 package Commands;
 
+import Tietokantaoperaatiot.*;
 import com.avaje.ebean.EbeanServer;
 import java.util.Scanner;
 import olutopas.model.User;
@@ -14,10 +15,10 @@ import olutopas.model.User;
  */
 public abstract class Command {
     Scanner scanner;
-    EbeanServer server;
+    DBHandler server;
     User user;
     
-    public Command(EbeanServer server, User user) {
+    public Command(DBHandler server, User user) {
      scanner = new Scanner(System.in);
      this.server = server;
      this.user = user;

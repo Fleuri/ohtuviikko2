@@ -4,6 +4,8 @@
  */
 package Commands;
 
+import Tietokantaoperaatiot.DBHandler;
+import Tietokantaoperaatiot.DBHandler2;
 import com.avaje.ebean.EbeanServer;
 import java.util.List;
 import olutopas.model.Brewery;
@@ -15,13 +17,13 @@ import olutopas.model.User;
  */
 public class listBreweries extends Command {
 
-    public listBreweries(EbeanServer server, User user) {
+    public listBreweries(DBHandler server, User user) {
         super(server, user);
     }
 
     @Override
     public void run() {
-        List<Brewery> breweries = server.find(Brewery.class).findList();
+        List<Brewery> breweries = server.listBreweries();
         for (Brewery brewery : breweries) {
             System.out.println(brewery);
         }

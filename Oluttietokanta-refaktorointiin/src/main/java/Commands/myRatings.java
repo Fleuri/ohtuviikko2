@@ -4,6 +4,8 @@
  */
 package Commands;
 
+import Tietokantaoperaatiot.DBHandler;
+import Tietokantaoperaatiot.DBHandler2;
 import com.avaje.ebean.EbeanServer;
 import olutopas.model.Rating;
 import olutopas.model.User;
@@ -14,7 +16,7 @@ import olutopas.model.User;
  */
 public class myRatings extends Command {
 
-    public myRatings(EbeanServer server, User user) {
+    public myRatings(DBHandler server, User user) {
         super(server, user);
     }
 

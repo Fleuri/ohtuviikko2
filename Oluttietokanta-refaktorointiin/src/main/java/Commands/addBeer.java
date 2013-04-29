@@ -4,6 +4,7 @@
  */
 package Commands;
 
+import Tietokantaoperaatiot.*;
 import com.avaje.ebean.EbeanServer;
 import olutopas.model.Beer;
 import olutopas.model.Brewery;
@@ -15,7 +16,7 @@ import olutopas.model.User;
  */
 public class addBeer extends Command{
     
-    public addBeer(EbeanServer server, User user) {
+    public addBeer(DBHandler server, User user) {
         super(server, user);
     }
 
@@ -23,7 +24,7 @@ public class addBeer extends Command{
     public void run() {
         System.out.print("to which brewery: ");
         String name = scanner.nextLine();
-        Brewery brewery = server.find(Brewery.class).where().like("name", name).findUnique();
+        Brewery brewery = server.findBrewery(name);
 
         if (brewery == null) {
             System.out.println(name + " does not exist");
@@ -34,14 +35,14 @@ public class addBeer extends Command{
 
         name = scanner.nextLine();
 
-        Beer exists = server.find(Beer.class).where().like("name", name).findUnique();
+        Beer exists = server.findBeer(name);
         if (exists != null) {
             System.out.println(name + " exists already");
             return;
         }
 
         brewery.addBeer(new Beer(name));
-        server.save(brewery);
+        server.saveBrewery(brewery);
         System.out.println(name + " added to " + brewery.getName());
     }
     

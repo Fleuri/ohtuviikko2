@@ -4,6 +4,8 @@
  */
 package Commands;
 
+import Tietokantaoperaatiot.DBHandler;
+import Tietokantaoperaatiot.DBHandler2;
 import com.avaje.ebean.EbeanServer;
 import olutopas.model.Brewery;
 import olutopas.model.User;
@@ -14,7 +16,7 @@ import olutopas.model.User;
  */
 public class deleteBrewery extends Command{
 
-    public deleteBrewery (EbeanServer server, User user) {
+    public deleteBrewery (DBHandler server, User user) {
         super(server, user);
     }
     
@@ -22,14 +24,14 @@ public class deleteBrewery extends Command{
     public void run() {
         System.out.print("to which brewery: ");
         String name = scanner.nextLine();
-        Brewery brewery = server.find(Brewery.class).where().like("name", name).findUnique();
+        Brewery brewery = server.findBrewery(name);
 
         if (brewery == null) {
             System.out.println(name + " does not exist");
             return;
         }
 
-        server.delete(brewery);
+        server.deleteBrewery(brewery);
 
         System.out.println("deleted: " + name);}
     

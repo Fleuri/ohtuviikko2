@@ -10,16 +10,18 @@ import olutopas.model.Brewery;
 import olutopas.model.Rating;
 import olutopas.model.User;
 import Commands.*;
+import Tietokantaoperaatiot.*;
 
 public class Application {
 
-    private EbeanServer server;
+    private DBHandler handler;
     private Scanner scanner = new Scanner(System.in);
     private User user;
     private HashMap<String, Command> commands;
 
     public Application(EbeanServer server) {
-        this.server = server;
+
+        this.handler = new DBHandler2(server);
         commands = new HashMap();
 
 
@@ -33,16 +35,16 @@ public class Application {
         login();
 
         System.out.println("\nWelcome to Ratebeer " + user.getName());
-        commands.put("1", new findBrewery(server, user));
-        commands.put("2", new findBeer(server, user));
-        commands.put("3", new addBeer(server, user));
-        commands.put("4", new listBreweries(server, user));
-        commands.put("5", new deleteBeer(server, user));
-        commands.put("6", new listBeers(server, user));
-        commands.put("7", new deleteBrewery(server, user));
-        commands.put("8", new addBrewery(server, user));
-        commands.put("9", new myRatings(server, user));
-        commands.put("0", new listUsers(server, user));
+        commands.put("1", new findBrewery(handler, user));
+        commands.put("2", new findBeer(handler, user));
+        commands.put("3", new addBeer(handler, user));
+        commands.put("4", new listBreweries(handler, user));
+        commands.put("5", new deleteBeer(handler, user));
+        commands.put("6", new listBeers(handler, user));
+        commands.put("7", new deleteBrewery(handler, user));
+        commands.put("8", new addBrewery(handler, user));
+        commands.put("9", new myRatings(handler, user));
+        commands.put("0", new listUsers(handler, user));
 
         while (true) {
             menu();
@@ -91,21 +93,21 @@ public class Application {
         brewery.addBeer(new Beer("Lager"));
         // tallettaa myös luodut oluet, sillä Brewery:n OneToMany-mappingiin on määritelty
         // CascadeType.all
-        server.save(brewery);
+        handler.saveBrewery(brewery);
 
         // luodaan olut ilman panimon asettamista
         Beer b = new Beer("Märzen");
-        server.save(b);
+        handler.saveBeer(b);
 
         // jotta saamme panimon asetettua, tulee olot lukea uudelleen kannasta
-        b = server.find(Beer.class, b.getId());
-        brewery = server.find(Brewery.class, brewery.getId());
+        b = handler.getServer().find(Beer.class, b.getId());
+        brewery = handler.getServer().find(Brewery.class, brewery.getId());
         brewery.addBeer(b);
-        server.save(brewery);
+        handler.saveBrewery(brewery);
 
-        server.save(new Brewery("Paulaner"));
+        handler.saveBrewery(new Brewery("Paulaner"));
 
-        server.save(new User("mluukkai"));
+        handler.saveUser(new User("mluukkai"));
     }
 
     private void login() {
@@ -120,7 +122,7 @@ public class Application {
                 continue;
             }
 
-            user = server.find(User.class).where().like("name", name).findUnique();
+            user = handler.findUser(name);
 
             if (user != null) {
                 break;
@@ -133,12 +135,12 @@ public class Application {
         System.out.println("Register a new user");
         System.out.print("give username: ");
         String name = scanner.nextLine();
-        User u = server.find(User.class).where().like("name", name).findUnique();
+        User u = handler.findUser(name);
         if (u != null) {
             System.out.println("user already exists!");
             return;
         }
-        server.save(new User(name));
+        handler.saveUser(new User(name));
         System.out.println("user created!\n");
     }
 }

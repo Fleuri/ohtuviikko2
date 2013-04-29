@@ -4,6 +4,8 @@
  */
 package Commands;
 
+import Tietokantaoperaatiot.DBHandler;
+import Tietokantaoperaatiot.DBHandler2;
 import com.avaje.ebean.EbeanServer;
 import olutopas.model.Brewery;
 import olutopas.model.User;
@@ -14,7 +16,7 @@ import olutopas.model.User;
  */
 public class addBrewery extends Command{
     
-    public addBrewery(EbeanServer server, User user) {
+    public addBrewery(DBHandler server, User user) {
         super(server, user);
     }
     
@@ -22,13 +24,13 @@ public class addBrewery extends Command{
     public void run() {
           System.out.print("brewery to add: ");
         String name = scanner.nextLine();
-        Brewery brewery = server.find(Brewery.class).where().like("name", name).findUnique();
+        Brewery brewery = server.findBrewery(name);
 
         if (brewery != null) {
             System.out.println(name + " already exists!");
             return;
         }
 
-        server.save(new Brewery(name));
+        server.saveBrewery(new Brewery(name));
     }
 }
